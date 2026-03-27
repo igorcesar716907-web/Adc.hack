@@ -1,4 +1,4 @@
-// Configurações do Jogo (Mesma lógica do C)
+// Configurações do Jogo
 const min = 1;
 const max = 20;
 const totalTentativas = 3;
@@ -39,9 +39,8 @@ function processarChute() {
     userInput.focus();
 
     // 1. VALIDAÇÃO COM PUNIÇÃO
-    // Se não for número OU estiver fora do limite, punimos:
     if (isNaN(num_user) || num_user < min || num_user > max) {
-        tentativasUsadas++; // <--- AQUI ESTÁ O DESCONTO DA TENTATIVA!
+        tentativasUsadas++; 
         let restante = totalTentativas - tentativasUsadas;
 
         if (isNaN(num_user)) {
@@ -51,10 +50,10 @@ function processarChute() {
         }
 
         verificarFimDeJogo(restante);
-        return; // Para a execução aqui, mas a tentativa já foi cobrada
+        return; 
     }
 
-    // 2. LÓGICA DE CHUTE CORRETO (Dentro das regras)
+    // 2. LÓGICA DE CHUTE CORRETO
     tentativasUsadas++;
     let restante = totalTentativas - tentativasUsadas;
 
@@ -68,15 +67,17 @@ function processarChute() {
     }
 }
 
-// Função auxiliar para não repetir código de "Game Over"
+// Função auxiliar para verificar fim de jogo
 function verificarFimDeJogo(restante) {
     if (restante <= 0 && !gameOver) {
         writeToTerminal(`SISTEMA BLOQUEADO! O número era ${num_sort}.`, 'error');
         finalizarJogo();
     } else if (!gameOver) {
-        writeToTerminal(`Tentativas restantes: ${restante}`, 'info')desabilitarr
+        writeToTerminal(`Tentativas restantes: ${restante}`, 'info');
+    }
+}
 
-// Função para encerrar o jogo e desabilitar entrada
+// Função para encerrar o jogo
 function finalizarJogo() {
     gameOver = true;
     userInput.disabled = true;
@@ -84,7 +85,7 @@ function finalizarJogo() {
     guessButton.disabled = true;
 }
 
-// Eventos (Ouvir o clique do botão e a tecla ENTER)
+// Eventos
 guessButton.addEventListener('click', processarChute);
 
 userInput.addEventListener('keydown', function(event) {
