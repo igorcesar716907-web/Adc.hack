@@ -16,6 +16,7 @@ body {
         height: 90vh; /* Fica mais alto para caber o teclado virtual */
         padding: 10px;
     }
+}
 
 /* O Container do Terminal */
 .terminal-container {
@@ -64,12 +65,13 @@ body {
 
 /* O Campo de Texto */
 input[type="number"] {
-    background: transparent;
-    border: none;
+    background: #111;
+    border: 1px solid #33ff33;
     color: #33ff33;
     font-family: 'Courier New', Courier, monospace;
     font-size: 16px;
     outline: none;
+    padding: 5px;
     width: 80px;
 }
 
@@ -78,14 +80,15 @@ input[type="number"] {
     background-color: #33ff33;
     color: #000;
     border: none;
-    padding: 12px 20px;
+    padding: 10px 20px;
     font-family: 'Courier New', Courier, monospace;
     cursor: pointer;
     font-weight: bold;
     margin-left: 10px;
-    transition: background-color 0.3s;
+    transition:  0.3s;
 }
 
 #guess-btn:hover {
     background-color: #ffff33;
+    box-shadow: 0 0 10px #ffff33;
 }
