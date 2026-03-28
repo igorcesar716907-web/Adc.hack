@@ -3,22 +3,22 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Neon Hacker Guessing Game</title>
+    <title>Protocolo de Adivinhação</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
-
     <div class="terminal-container">
-        <div id="terminal-output" class="output">
-            </div>
-
+        <div id="output" class="output">
+            <p class="msg-info">> INICIALIZANDO PROTOCOLO DE ADIVINHAÇÃO...</p>
+            <p class="msg-info">> Adivinhe números entre 1 e 50</p>
+            <p id="tentativas-msg" class="msg-info">> Tentativas autorizadas: 5</p>
+        </div>
         <div class="input-line">
             <span class="prompt">></span>
-            <input type="number" id="user-input" inputmode="numeric" pattern="[0-9]*" autofocus>
+            <input type="number" id="guess-input" placeholder="00" min="1" max="50">
             <button id="guess-btn">CHUTAR</button>
         </div>
     </div>
-
     <script src="script.js"></script>
 </body>
 </html>
