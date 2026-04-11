@@ -35,6 +35,7 @@ async function digitarTexto(texto, classe, delay = 20) {
         output.scrollTop = output.scrollHeight;
         await new Promise(res => setTimeout(res, delay));
     }
+    output.scrollTop = output.scrollHeight;
 }
 
 async function processarChute() {
