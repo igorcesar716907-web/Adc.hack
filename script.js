@@ -1,7 +1,7 @@
 // CONFIGURAÇÕES (Baseadas no seu adv2.c)
 const min = 1;
 const max = 400;
-const limiteTentativas = 5;
+const limiteTentativas = 6;
 let tentativasRestantes = limiteTentativas;
 let duplicar = 1; // Quantidade de firewalls (conforme seu C)
 let firewalls = []; // Array para múltiplos firewalls
@@ -83,10 +83,10 @@ async function processarChute() {
    if (numUser === token) {
         await digitarTexto(`ACESSO GARANTIDO. Validando token ${token}... OK!`, "msg-win");
         await digitarTexto("SISTEMA LIBERADO. Deseja iniciar nova sessão?", "msg-info");
-        salavarResultado("vitória");
+        salvarResultado("vitória");
         // Prepara o botão para reiniciar em vez de chutar
         btn.innerText = "REINICIAR";
-        btn.onclick = reiniciarSessao; 
+        btn.onclick = reiniciarSessao(); 
         input.disabled = true;
         return;
     }
